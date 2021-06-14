@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]='formData' (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="mb-1">First Name</label>
+                <div class="input-group"> 
+                    <input class="form-control form-control-lg" type="text" formControlName="firstName" placeholder="Enter First Name">                
+                </div>
+                <mat-error *ngIf="formData.controls['firstName'].touched && formData.controls['firstName'].invalid">
+                    <mat-error *ngIf="formData.controls['firstName'].errors.required">
+                        First name is required.
+                    </mat-error>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <label class="mb-1">Last Name</label>
+                <div class="input-group"> 
+                    <input class="form-control form-control-lg" type="text" formControlName="lastName" placeholder="Enter Last Name">
+                </div>
+                <mat-error *ngIf="formData.controls['lastName'].touched && formData.controls['lastName'].invalid">
+                    <mat-error *ngIf="formData.controls['lastName'].errors.required">
+                        Last name is required.
+                    </mat-error>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <label class="mb-1">E-mail</label>
+                <div class="input-group"> 
+                    <input class="form-control form-control-lg" type="text" formControlName="email" placeholder="Enter E-mail">
+                </div>
+                <mat-error *ngIf="formData.controls['email'].touched && formData.controls['email'].invalid">
+                    <mat-error *ngIf="formData.controls['email'].errors.required">
+                        Email name is required.
+                    </mat-error>
+                    <mat-error *ngIf="formData.controls['email'].errors.email">
+                        Email is invalid.
+                    </mat-error>
+                    <mat-error *ngIf="formData.control['email'].errors.emailDomain">
+                        Email domain should be gmail.com
+                    </mat-error>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <label class="mb-1">Password</label>
+                <div class="input-group"> 
+                    <input class="form-control form-control-lg" formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Enter Password">
+                    <span class="input-group-text" id="password-addon" (click)="hide = !hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </span>
+                </div>
+                <mat-error *ngIf="formData.controls['password'].touched && formData.controls['password'].invalid">
+                    <mat-error *ngIf="formData.controls['password'].errors.required">
+                        Password is required.
+                    </mat-error>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <label class="mb-1">Confirm Password</label>
+                <div class="input-group">   
+                    <input class="form-control form-control-lg" type="password" placeholder="Enter Confirm Password">                
+                </div>
+                <mat-error *ngIf="formData.controls['confirmPassword'].touched && formData.controls['confirmPassword'].invalid">
+                    <mat-error *ngIf="formData.controls['confirmPassword'].errors.required">
+                        Confirm password is required.
+                    </mat-error>
+                </mat-error>
+            </div>
+            <div>
+                <button type="submit" mat-raised-button [disabled]="formData.invalid">Submit</button>
+            </div>
+        </form>                
+    </div>
+</div>

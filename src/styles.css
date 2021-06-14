@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-form-field{
+    width:100%;
+}
+#password-addon{
+    background-color: #fff;
+    border:none;
+    position: absolute;
+    right: 1px;
+    top: 12px;
+    z-index: 999;
+    padding:0px 7px 0px 7px;
+    cursor:pointer;
+}

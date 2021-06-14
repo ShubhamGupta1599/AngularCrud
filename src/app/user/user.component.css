@@ -1,0 +1,23 @@
+mat-card{
+    background-color: #eef9ff;
+    top:1em;
+}
+mat-card-content{
+    padding:15px 25px 15px 25px;
+}
+.tab-header{
+    display:inline-flex;
+    text-align: center;
+    text-decoration: none;  
+    width:100%;  
+    background-color: #eef9ff;
+}
+.tab-header h4{
+    width:50%;
+    margin:0;
+    padding:4px 0px 4px 0px;   
+    padding:10px 0px 10px 0px; 
+}
+.active{
+border-bottom:2px solid #003460;
+}
